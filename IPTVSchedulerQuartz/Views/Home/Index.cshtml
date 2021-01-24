@@ -1,0 +1,32 @@
+﻿@model IPTVSchedulerQuartz.Models.ListIptv;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a href="@Url.Action("GetList", "Home")">GetList</a>
+
+<h1>Index</h1>
+<h1>Actived: @ViewData["config"]</h1>
+<hr />
+<br />
+@if (Model?.Items != null)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>UserName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Reseller_Full_Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+
